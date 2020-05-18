@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Pendu_exam
 {
@@ -43,9 +44,14 @@ namespace Pendu_exam
             newform.ShowDialog();
             FormMain.Mode2joueurs = true;
             if ((FormMain.Mode2joueurs == true) && (FormMain.motMystere != null))
-            { 
+            {
+                using (StreamWriter sw = File.AppendText(FormMain.path))
+                {
+                    sw.WriteLine(FormMain.motMystere.ToUpperInvariant());
+                }
                 Close();
             }
+            else { FormMain.Mode2joueurs = false; }
         }
 
         private void buttonQuitter_Click(object sender, EventArgs e)

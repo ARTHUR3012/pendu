@@ -27,8 +27,8 @@ namespace Pendu_exam
         private void buttonJouer_Click(object sender, EventArgs e)
         {
             if (textBoxMotMystere.TextLength > 0)
-            { 
-                FormMain.motMystere = textBoxMotMystere.Text;
+            {                 
+                FormMain.motMystere = textBoxMotMystere.Text.ToUpperInvariant();
                 Close();
             }
             else

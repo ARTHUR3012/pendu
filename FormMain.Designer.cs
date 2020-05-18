@@ -32,7 +32,7 @@
             this.richTextBoxMotMystere = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox_coupRestant = new System.Windows.Forms.RichTextBox();
             this.buttonA = new System.Windows.Forms.Button();
             this.buttonB = new System.Windows.Forms.Button();
             this.buttonC = new System.Windows.Forms.Button();
@@ -61,11 +61,11 @@
             this.buttonZ = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
-            this.picturePendu = new System.Windows.Forms.PictureBox();
+            this.richTextBoxMotTrouve = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxScoreTotal = new System.Windows.Forms.RichTextBox();
             this.buttonMode = new System.Windows.Forms.Button();
             this.buttonQuitter = new System.Windows.Forms.Button();
+            this.picturePendu = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picturePendu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,13 +106,14 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Nombres de coups restants : ";
             // 
-            // richTextBox2
+            // richTextBox_coupRestant
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(153, 383);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(111, 31);
-            this.richTextBox2.TabIndex = 5;
-            this.richTextBox2.Text = "";
+            this.richTextBox_coupRestant.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox_coupRestant.Location = new System.Drawing.Point(153, 383);
+            this.richTextBox_coupRestant.Name = "richTextBox_coupRestant";
+            this.richTextBox_coupRestant.Size = new System.Drawing.Size(111, 31);
+            this.richTextBox_coupRestant.TabIndex = 5;
+            this.richTextBox_coupRestant.Text = "";
             // 
             // buttonA
             // 
@@ -392,30 +393,23 @@
             this.label5.TabIndex = 33;
             this.label5.Text = "Votre score actuel : ";
             // 
-            // richTextBox3
+            // richTextBoxMotTrouve
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(171, 37);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(100, 25);
-            this.richTextBox3.TabIndex = 34;
-            this.richTextBox3.Text = "";
+            this.richTextBoxMotTrouve.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxMotTrouve.Location = new System.Drawing.Point(171, 37);
+            this.richTextBoxMotTrouve.Name = "richTextBoxMotTrouve";
+            this.richTextBoxMotTrouve.Size = new System.Drawing.Size(100, 25);
+            this.richTextBoxMotTrouve.TabIndex = 34;
+            this.richTextBoxMotTrouve.Text = "";
             // 
-            // richTextBox4
+            // richTextBoxScoreTotal
             // 
-            this.richTextBox4.Location = new System.Drawing.Point(171, 6);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(100, 25);
-            this.richTextBox4.TabIndex = 35;
-            this.richTextBox4.Text = "";
-            // 
-            // picturePendu
-            // 
-            this.picturePendu.Image = global::Pendu_exam.Properties.Resources.E2;
-            this.picturePendu.Location = new System.Drawing.Point(723, 80);
-            this.picturePendu.Name = "picturePendu";
-            this.picturePendu.Size = new System.Drawing.Size(320, 326);
-            this.picturePendu.TabIndex = 36;
-            this.picturePendu.TabStop = false;
+            this.richTextBoxScoreTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxScoreTotal.Location = new System.Drawing.Point(171, 6);
+            this.richTextBoxScoreTotal.Name = "richTextBoxScoreTotal";
+            this.richTextBoxScoreTotal.Size = new System.Drawing.Size(100, 25);
+            this.richTextBoxScoreTotal.TabIndex = 35;
+            this.richTextBoxScoreTotal.Text = "";
             // 
             // buttonMode
             // 
@@ -437,6 +431,14 @@
             this.buttonQuitter.UseVisualStyleBackColor = true;
             this.buttonQuitter.Click += new System.EventHandler(this.buttonQuitter_Click);
             // 
+            // picturePendu
+            // 
+            this.picturePendu.Location = new System.Drawing.Point(723, 80);
+            this.picturePendu.Name = "picturePendu";
+            this.picturePendu.Size = new System.Drawing.Size(320, 326);
+            this.picturePendu.TabIndex = 36;
+            this.picturePendu.TabStop = false;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -445,8 +447,8 @@
             this.Controls.Add(this.buttonQuitter);
             this.Controls.Add(this.buttonMode);
             this.Controls.Add(this.picturePendu);
-            this.Controls.Add(this.richTextBox4);
-            this.Controls.Add(this.richTextBox3);
+            this.Controls.Add(this.richTextBoxScoreTotal);
+            this.Controls.Add(this.richTextBoxMotTrouve);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonZ);
@@ -475,7 +477,7 @@
             this.Controls.Add(this.buttonC);
             this.Controls.Add(this.buttonB);
             this.Controls.Add(this.buttonA);
-            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.richTextBox_coupRestant);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.richTextBoxMotMystere);
@@ -497,7 +499,7 @@
         private System.Windows.Forms.RichTextBox richTextBoxMotMystere;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox richTextBox_coupRestant;
         private System.Windows.Forms.Button buttonA;
         private System.Windows.Forms.Button buttonB;
         private System.Windows.Forms.Button buttonC;
@@ -526,8 +528,8 @@
         private System.Windows.Forms.Button buttonZ;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.RichTextBox richTextBox4;
+        private System.Windows.Forms.RichTextBox richTextBoxMotTrouve;
+        private System.Windows.Forms.RichTextBox richTextBoxScoreTotal;
         private System.Windows.Forms.PictureBox picturePendu;
         private System.Windows.Forms.Button buttonMode;
         private System.Windows.Forms.Button buttonQuitter;

@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace Pendu_exam
 {
-    public partial class Form1 : Form
+    public partial class FormIntro : Form
     {
-        public Form1()
+        public FormIntro()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            Close();
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -35,6 +35,22 @@ namespace Pendu_exam
         private void richTextBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_2joueurs_Click(object sender, EventArgs e)
+        {
+            FormMot newform = new FormMot();
+            newform.ShowDialog();
+            FormMain.Mode2joueurs = true;
+            if ((FormMain.Mode2joueurs == true) && (FormMain.motMystere != null))
+            { 
+                Close();
+            }
+        }
+
+        private void buttonQuitter_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

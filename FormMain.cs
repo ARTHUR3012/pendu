@@ -23,7 +23,7 @@ namespace Pendu_exam
         internal static int scoreTotal = 0;
         internal static Boolean partieGagne = false;
         internal static int totalMotTrouve = 0;
-        internal static string path = "dico.txt";
+        internal static string path = "dicos.txt";
 
         private string AffichageMotMystere(string mot)
         {
@@ -154,10 +154,21 @@ namespace Pendu_exam
             longueur = 0;
             if (Mode2joueurs == false)
             {
-                string[] allLines = File.ReadAllLines(path);
-                Random rnd1 = new Random();
-                motMystere = allLines[rnd1.Next(allLines.Length)];                
+                try
+                {
+                    string[] allLines = File.ReadAllLines(path);
+                    Random rnd1 = new Random();
+                    motMystere = allLines[rnd1.Next(allLines.Length)];
+                }
+                catch (IOException)
+                {
+                    MessageBox.Show("Le fichier " + path + " n'existe pas");
+                    Application.Exit();
+                    return;
+                }
+                             
             }
+
             longueur = motMystere.Length;
             lettreCheck = new Boolean[longueur];
             richTextBoxMotMystere.Text = AffichageMotMystere(motMystere);

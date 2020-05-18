@@ -48,6 +48,7 @@ namespace Pendu_exam
                 using (StreamWriter sw = File.AppendText(FormMain.path))
                 {
                     sw.WriteLine(FormMain.motMystere.ToUpperInvariant());
+                    sw.Close();
                 }
                 Close();
             }

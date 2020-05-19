@@ -21,7 +21,7 @@ namespace Pendu_exam
         internal static int compteurCoup = 0;
         internal static int[] point = { 5,10,15,25,35,50,100};
         internal static int scoreTotal = 0;
-        internal static Boolean partieGagne = false;
+        internal static Boolean partieFinie = false;
         internal static int totalMotTrouve = 0;
         internal static string path = "dico.txt";
 
@@ -85,9 +85,10 @@ namespace Pendu_exam
                 if (compteurCoup < 0)
                 {
                     MessageBox.Show("PERDU - le  mot était : "+motMystere);
+                    partieFinie = true;
                     return;
                 }
-                richTextBox_coupRestant.Text = compteurCoup.ToString();
+                richTextBox_coupRestant.Text = (compteurCoup+1).ToString();
             }
             bool allTrue = true;
             foreach (bool b in lettreCheck)
@@ -110,7 +111,7 @@ namespace Pendu_exam
                 MessageBox.Show("VOUS AVEZ GAGNE - Votre score est de "+point[compteurCoup].ToString());
                 totalMotTrouve++;
                 richTextBoxMotTrouve.Text = totalMotTrouve.ToString();
-                partieGagne = true;
+                partieFinie = true;
             }
             return;
         }
@@ -121,7 +122,7 @@ namespace Pendu_exam
 
         private void Intro()
         {
-            partieGagne = false;
+            partieFinie = false;
             Mode2joueurs = false;
             buttonA.Enabled = true;
             buttonB.Enabled = true;
@@ -173,7 +174,7 @@ namespace Pendu_exam
             lettreCheck = new Boolean[longueur];
             richTextBoxMotMystere.Text = AffichageMotMystere(motMystere);
             compteurCoup = 6;
-            richTextBox_coupRestant.Text = compteurCoup.ToString();
+            richTextBox_coupRestant.Text = (compteurCoup+1).ToString();
             picturePendu.Image = Pendu_exam.Properties.Resources.E1;
           
         }
@@ -199,21 +200,21 @@ namespace Pendu_exam
         private void buttonA_Click(object sender, EventArgs e)
         {
             ControleLettre("A");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonA.Enabled = false; }
         }
         private void buttonB_Click(object sender, EventArgs e)
         {
             ControleLettre("B");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else { buttonB.Enabled = false; }
         }
 
         private void buttonC_Click(object sender, EventArgs e)
         {
             ControleLettre("C");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonC.Enabled = false; }
         }
@@ -221,7 +222,7 @@ namespace Pendu_exam
         private void buttonD_Click(object sender, EventArgs e)
         {
             ControleLettre("D");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonD.Enabled = false; }
         }
@@ -229,7 +230,7 @@ namespace Pendu_exam
         private void buttonE_Click(object sender, EventArgs e)
         {
             ControleLettre("E");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonE.Enabled = false; }
         }
@@ -237,7 +238,7 @@ namespace Pendu_exam
         private void buttonF_Click(object sender, EventArgs e)
         {
             ControleLettre("F");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonF.Enabled = false; }
         }
@@ -245,7 +246,7 @@ namespace Pendu_exam
         private void buttonG_Click(object sender, EventArgs e)
         {
             ControleLettre("G");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonG.Enabled = false; }
         }
@@ -253,7 +254,7 @@ namespace Pendu_exam
         private void buttonH_Click(object sender, EventArgs e)
         {
             ControleLettre("H");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonH.Enabled = false; }
         }
@@ -261,7 +262,7 @@ namespace Pendu_exam
         private void buttonI_Click(object sender, EventArgs e)
         {
             ControleLettre("I");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonI.Enabled = false; }
         }
@@ -269,7 +270,7 @@ namespace Pendu_exam
         private void buttonJ_Click(object sender, EventArgs e)
         {
             ControleLettre("J");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonJ.Enabled = false; }
         }
@@ -277,7 +278,7 @@ namespace Pendu_exam
         private void buttonK_Click(object sender, EventArgs e)
         {
             ControleLettre("K");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonK.Enabled = false; }
         }
@@ -285,7 +286,7 @@ namespace Pendu_exam
         private void buttonL_Click(object sender, EventArgs e)
         {
             ControleLettre("L");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonL.Enabled = false; }
         }
@@ -293,7 +294,7 @@ namespace Pendu_exam
         private void buttonM_Click(object sender, EventArgs e)
         {
             ControleLettre("M");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonM.Enabled = false; }
         }
@@ -301,7 +302,7 @@ namespace Pendu_exam
         private void buttonN_Click(object sender, EventArgs e)
         {
             ControleLettre("N");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonN.Enabled = false; }
         }
@@ -309,7 +310,7 @@ namespace Pendu_exam
         private void buttonO_Click(object sender, EventArgs e)
         {
             ControleLettre("O");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonO.Enabled = false; }
         }
@@ -317,7 +318,7 @@ namespace Pendu_exam
         private void buttonP_Click(object sender, EventArgs e)
         {
             ControleLettre("P");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonP.Enabled = false; }
         }
@@ -325,7 +326,7 @@ namespace Pendu_exam
         private void buttonQ_Click(object sender, EventArgs e)
         {
             ControleLettre("Q");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonQ.Enabled = false; }
         }
@@ -333,7 +334,7 @@ namespace Pendu_exam
         private void buttonR_Click(object sender, EventArgs e)
         {
             ControleLettre("R");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonR.Enabled = false; }
         }
@@ -341,7 +342,7 @@ namespace Pendu_exam
         private void buttonS_Click(object sender, EventArgs e)
         {
             ControleLettre("S");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonS.Enabled = false; }
         }
@@ -349,7 +350,7 @@ namespace Pendu_exam
         private void buttonT_Click(object sender, EventArgs e)
         {
             ControleLettre("T");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonT.Enabled = false; }
         }
@@ -357,7 +358,7 @@ namespace Pendu_exam
         private void buttonU_Click(object sender, EventArgs e)
         {
             ControleLettre("U");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonU.Enabled = false; }
         }
@@ -365,7 +366,7 @@ namespace Pendu_exam
         private void buttonV_Click(object sender, EventArgs e)
         {
             ControleLettre("V");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonV.Enabled = false; }
         }
@@ -373,7 +374,7 @@ namespace Pendu_exam
         private void buttonW_Click(object sender, EventArgs e)
         {
             ControleLettre("W");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonW.Enabled = false; }
         }
@@ -381,7 +382,7 @@ namespace Pendu_exam
         private void buttonX_Click(object sender, EventArgs e)
         {
             ControleLettre("X");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonX.Enabled = false; }
         }
@@ -389,7 +390,7 @@ namespace Pendu_exam
         private void buttonY_Click(object sender, EventArgs e)
         {
             ControleLettre("Y");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonY.Enabled = false; }
         }
@@ -397,7 +398,7 @@ namespace Pendu_exam
         private void buttonZ_Click(object sender, EventArgs e)
         {
             ControleLettre("Z");
-            if (partieGagne == true) { Intro(); }
+            if (partieFinie == true) { Intro(); }
             else
             { buttonZ.Enabled = false; }
         }

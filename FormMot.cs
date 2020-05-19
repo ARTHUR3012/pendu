@@ -37,5 +37,16 @@ namespace Pendu_exam
             }
 
     }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxMotMystere_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 65 && e.KeyChar <= 90) || e.KeyChar == 8) return;
+            e.Handled = true;
+        }
     }
 }

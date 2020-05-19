@@ -23,7 +23,7 @@ namespace Pendu_exam
         internal static int scoreTotal = 0;
         internal static Boolean partieGagne = false;
         internal static int totalMotTrouve = 0;
-        internal static string path = "dicos.txt";
+        internal static string path = "dico.txt";
 
         private string AffichageMotMystere(string mot)
         {

@@ -23,23 +23,11 @@ namespace Pendu_exam
             Close();
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button_2joueurs_Click(object sender, EventArgs e)
         {
+            // Mode 2 joueurs 
+            // Demander à l'utilisateur un mot et l'ajouter dans le dictionnaire
+            // Lancer le jeu avec le mot choissi
             FormMot newform = new FormMot();
             newform.ShowDialog();
             FormMain.Mode2joueurs = true;

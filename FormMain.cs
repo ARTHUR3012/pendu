@@ -14,6 +14,7 @@ namespace Pendu_exam
 {
     public partial class FormMain : Form
     {
+        // variable de classe
         internal static String motMystere;
         internal static Boolean Mode2joueurs;
         internal static int longueur;
@@ -25,6 +26,7 @@ namespace Pendu_exam
         internal static int totalMotTrouve = 0;
         internal static string path = "dico.txt";
 
+        // fonction d'affichage du mot mystère avec lettre non trouvée cachée
         private string AffichageMotMystere(string mot)
         {
             char[] mottemp = new char[longueur];
@@ -38,6 +40,9 @@ namespace Pendu_exam
             return new string(mottemp);
         }
 
+        // fonction de vérification de la présent de la lettre demandée dans le mot
+        // après contrôle on modifie le nombre de coup
+        // vérification si on a trouvé le mot et donc gagné ou perdu si plus de coup restant
         private void ControleLettre(string lettre)
         {
             Debug.WriteLine(lettre);
@@ -45,7 +50,7 @@ namespace Pendu_exam
             int LettreIndex = motMystere.IndexOf(lettre, pos, StringComparison.InvariantCultureIgnoreCase);
             if (LettreIndex >= 0)
             {
-                //TROUVE
+                //LETTRE TROUVE -> vérification si la lettre est présente plusieurs fois
                 while (LettreIndex >= 0)
                 {
                     if (LettreIndex >= 0)
@@ -59,7 +64,8 @@ namespace Pendu_exam
             }
             else
             {
-                //PAS TROUVE            
+                //LETTRE PAS TROUVE            
+                //Modification de l'image et découpe de coup restant
                 switch (compteurCoup)
                 {
                     case 1:
@@ -84,12 +90,15 @@ namespace Pendu_exam
                 compteurCoup--;               
                 if (compteurCoup < 0)
                 {
+                    //PERDU
                     MessageBox.Show("PERDU - le  mot était : "+motMystere);
                     partieFinie = true;
                     return;
                 }
                 richTextBox_coupRestant.Text = (compteurCoup+1).ToString();
             }
+            //Vérification si on a trouvé toutes les lettres
+            //Boucle sur le tableau TRUE/FALSE pour vérifier si tout est à TRUE = GAGNE
             bool allTrue = true;
             foreach (bool b in lettreCheck)
             { 
@@ -103,9 +112,10 @@ namespace Pendu_exam
                     break;
                 }
             }
-
+            
             if (allTrue)
                 {                
+                //GAGNE
                 scoreTotal = scoreTotal + point[compteurCoup];
                 richTextBoxScoreTotal.Text = scoreTotal.ToString();
                 MessageBox.Show("VOUS AVEZ GAGNE - Votre score est de "+point[compteurCoup].ToString());
@@ -122,6 +132,8 @@ namespace Pendu_exam
 
         private void Intro()
         {
+            //Configuration du jeu
+            //Choix du mode de jeu : 1joeur/1joeurs
             partieFinie = false;
             Mode2joueurs = false;
             buttonA.Enabled = true;
@@ -153,6 +165,7 @@ namespace Pendu_exam
             FormIntro newform = new FormIntro();
             newform.ShowDialog();
             longueur = 0;
+            //Si mode 1 joeur - prendre un mot en alétoire dans le fichier dico
             if (Mode2joueurs == false)
             {
                 try
@@ -179,7 +192,7 @@ namespace Pendu_exam
           
         }
         private void FormMain_Shown(object sender, EventArgs e)
-        {
+        {            
             Intro();   
         }
 

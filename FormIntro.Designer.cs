@@ -55,7 +55,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(466, 238);
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+
             // 
             // button_2joueurs
             // 
@@ -76,7 +76,6 @@
             this.textBox1.TabIndex = 3;
             this.textBox1.Text = "Choisisez votre mode de jeu :";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // richTextBox2
             // 
@@ -85,7 +84,7 @@
             this.richTextBox2.Size = new System.Drawing.Size(466, 73);
             this.richTextBox2.TabIndex = 5;
             this.richTextBox2.Text = resources.GetString("richTextBox2.Text");
-            this.richTextBox2.TextChanged += new System.EventHandler(this.richTextBox2_TextChanged);
+
             // 
             // buttonQuitter
             // 
